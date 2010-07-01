@@ -1,0 +1,10 @@
+Plugin Name: Admin Ads
+Author: Andrew Billits
+
+Files:
+----------------------------------------------------------------------
+admin-ads.php - goes in /wp-content/mu-plugins
+
+Instructions:
+----------------------------------------------------------------------
+1) Place the files in the specified directories
