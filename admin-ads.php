@@ -4,7 +4,7 @@ Plugin Name: Admin Ads
 Plugin URI: 
 Description:
 Author: Andrew Billits
-Version: 1.0.7
+Version: 1.0.8
 Author URI:
 WDP ID: 6
 */
@@ -38,7 +38,7 @@ add_action('admin_notices', 'admin_ads_output');
 function admin_ads_output() {
 	$admin_ads_data = get_site_option('admin_ads_data');
 	if ( !empty($admin_ads_data) && $admin_ads_data != 'empty' ){
-		echo stripslashes( $admin_ads_data );
+		echo '<div class="wpmu-notice">'.stripslashes( $admin_ads_data ).'</div>';
 	}
 }
 
