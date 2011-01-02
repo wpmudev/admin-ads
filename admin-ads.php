@@ -93,7 +93,7 @@ function admin_ads_page_main_output() {
 			}
 			?>
 			<h2><?php _e('Admin Ads') ?></h2>
-            <form method="post" action="<?php print $admin_ads_settings_page_long; ?>?page=admin-ads&action=update">
+            <form method="post" action="<?php print $admin_ads_settings_page; ?>?page=admin-ads&action=update">
             <table class="form-table">
             <tr valign="top">
             <th scope="row"><?php _e('Ad Code') ?></th>
