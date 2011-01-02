@@ -56,7 +56,7 @@ function admin_ads_output() {
 }
 
 function admin_ads_plug_pages() {
-	global $wpdb, $wp_roles, $current_user, $wp_version;
+	global $wpdb, $wp_roles, $current_user, $wp_version, $admin_ads_settings_page, $admin_ads_settings_page_long;
 	
 	if ( version_compare($wp_version, '3.0.9', '>') ) {
 		if ( is_network_admin() ) {
@@ -74,7 +74,7 @@ function admin_ads_plug_pages() {
 //------------------------------------------------------------------------//
 
 function admin_ads_page_main_output() {
-	global $wpdb, $wp_roles, $current_user;
+	global $wpdb, $wp_roles, $current_user, $admin_ads_settings_page, $admin_ads_settings_page_long;
 	
 	if(!current_user_can('manage_options')) {
 		echo "<p>Nice Try...</p>";  //If accessed properly, this message doesn't appear.
