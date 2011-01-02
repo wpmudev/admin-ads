@@ -40,6 +40,7 @@ if ( version_compare($wp_version, '3.0.9', '>') ) {
 //------------------------------------------------------------------------//
 //---Hook-----------------------------------------------------------------//
 //------------------------------------------------------------------------//
+add_action('init', 'admin_ads_init');
 add_action('admin_menu', 'admin_ads_plug_pages');
 add_action('network_admin_menu', 'admin_ads_plug_pages');
 add_action('admin_notices', 'admin_ads_output');
@@ -47,6 +48,10 @@ add_action('network_admin_notices', 'admin_ads_output');
 //------------------------------------------------------------------------//
 //---Functions------------------------------------------------------------//
 //------------------------------------------------------------------------//
+
+function admin_ads_init() {
+	load_plugin_textdomain('admin_ads', false, dirname(plugin_basename(__FILE__)).'/languages');
+}
 
 function admin_ads_output() {
 	$admin_ads_data = get_site_option('admin_ads_data');
@@ -60,11 +65,11 @@ function admin_ads_plug_pages() {
 	
 	if ( version_compare($wp_version, '3.0.9', '>') ) {
 		if ( is_network_admin() ) {
-			add_submenu_page($admin_ads_settings_page, 'Admin Ads', 'Admin Ads', 10, 'admin-ads', 'admin_ads_page_main_output');
+			add_submenu_page($admin_ads_settings_page, __('Admin Ads', 'admin_ads'), __('Admin Ads', 'admin_ads'), 10, 'admin-ads', 'admin_ads_page_main_output');
 		}
 	} else {
 		if ( is_site_admin() ) {
-			add_submenu_page($admin_ads_settings_page, 'Admin Ads', 'Admin Ads', 10, 'admin-ads', 'admin_ads_page_main_output');
+			add_submenu_page($admin_ads_settings_page, __('Admin Ads', 'admin_ads'), __('Admin Ads', 'admin_ads'), 10, 'admin-ads', 'admin_ads_page_main_output');
 		}
 	}
 }
@@ -81,7 +86,7 @@ function admin_ads_page_main_output() {
 		return;
 	}
 	if (isset($_GET['updated'])) {
-		?><div id="message" class="updated fade"><p><?php _e('' . urldecode($_GET['updatedmsg']) . '') ?></p></div><?php
+		?><div id="message" class="updated fade"><p><?php _e(urldecode($_GET['updatedmsg']), 'admin_ads') ?></p></div><?php
 	}
 	echo '<div class="wrap">';
 	switch( $_GET[ 'action' ] ) {
@@ -92,20 +97,20 @@ function admin_ads_page_main_output() {
 				$admin_ads_data = '';
 			}
 			?>
-			<h2><?php _e('Admin Ads') ?></h2>
+			<h2><?php _e('Admin Ads', 'admin_ads') ?></h2>
             <form method="post" action="<?php print $admin_ads_settings_page; ?>?page=admin-ads&action=update">
             <table class="form-table">
             <tr valign="top">
-            <th scope="row"><?php _e('Ad Code') ?></th>
+            <th scope="row"><?php _e('Ad Code', 'admin_ads') ?></th>
             <td>
             <textarea name="admin_ads_data" type="text" rows="5" wrap="soft" id="admin_ads_data" style="width: 95%"/><?php echo $admin_ads_data; ?></textarea>
-            <br /><?php _e('Tip: Use HTML markup around the code to make it centered on the page.') ?></td>
+            <br /><?php _e('Tip: Use HTML markup around the code to make it centered on the page.', 'admin_ads') ?></td>
             </tr>
             </table>
             
             <p class="submit">
-            <input type="submit" name="Submit" value="<?php _e('Save Changes') ?>" />
-			<input type="submit" name="Reset" value="<?php _e('Reset') ?>" />
+            <input type="submit" name="Submit" value="<?php _e('Save Changes', 'admin_ads') ?>" />
+			<input type="submit" name="Reset" value="<?php _e('Reset', 'admin_ads') ?>" />
             </p>
             </form>
 			<?php
@@ -116,7 +121,7 @@ function admin_ads_page_main_output() {
 				update_site_option( "admin_ads_data", "empty" );
 				echo "
 				<SCRIPT LANGUAGE='JavaScript'>
-				window.location='{$admin_ads_settings_page}?page=admin-ads&updated=true&updatedmsg=" . urlencode(__('Settings cleared.')) . "';
+				window.location='{$admin_ads_settings_page}?page=admin-ads&updated=true&updatedmsg=" . urlencode(__('Settings cleared.', 'admin_ads')) . "';
 				</script>
 				";
 			} else {
@@ -127,7 +132,7 @@ function admin_ads_page_main_output() {
 				update_site_option( "admin_ads_data", stripslashes($admin_ads_data) );
 				echo "
 				<SCRIPT LANGUAGE='JavaScript'>
-				window.location='{$admin_ads_settings_page}?page=admin-ads&updated=true&updatedmsg=" . urlencode(__('Settings saved.')) . "';
+				window.location='{$admin_ads_settings_page}?page=admin-ads&updated=true&updatedmsg=" . urlencode(__('Settings saved.', 'admin_ads')) . "';
 				</script>
 				";
 			}

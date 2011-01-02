@@ -1,0 +1,74 @@
+# Translation of the WordPress plugin Admin Ads 1.0.9 by S H Mohanjith (Incsub), Andrew Billits (Incsub).
+# Copyright (C) 2011 S H Mohanjith (Incsub), Andrew Billits (Incsub)
+# This file is distributed under the same license as the Admin Ads package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Admin Ads 1.0.9\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/admin-ads\n"
+"POT-Creation-Date: 2011-01-03 01:02+0530\n"
+"PO-Revision-Date: 2011-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. #-#-#-#-#  admin-ads.pot (Admin Ads 1.0.9)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: admin-ads.php:68 admin-ads.php:72 admin-ads.php:100
+msgid "Admin Ads"
+msgstr ""
+
+#: admin-ads.php:104
+msgid "Ad Code"
+msgstr ""
+
+#: admin-ads.php:107
+msgid "Tip: Use HTML markup around the code to make it centered on the page."
+msgstr ""
+
+#: admin-ads.php:112
+msgid "Save Changes"
+msgstr ""
+
+#: admin-ads.php:113
+msgid "Reset"
+msgstr ""
+
+#: admin-ads.php:124
+msgid "Settings cleared."
+msgstr ""
+
+#: admin-ads.php:135
+msgid "Settings saved."
+msgstr ""
+
+#: admin-ads.php:154
+msgid ""
+"Please install the latest version of <a href=\"http://premium.wpmudev.org/"
+"project/update-notifications/\" title=\"Download Now &raquo;\">our free "
+"Update Notifications plugin</a> which helps you stay up-to-date with the "
+"most stable, secure versions of WPMU DEV themes and plugins. <a href="
+"\"http://premium.wpmudev.org/wpmu-dev/update-notifications-plugin-"
+"information/\">More information &raquo;</a>"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://premium.wpmudev.org/project/admin-ads"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Display ads in admin dashboard"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "S H Mohanjith (Incsub), Andrew Billits (Incsub)"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://premium.wpmudev.org"
+msgstr ""
