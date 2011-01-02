@@ -3,7 +3,7 @@ Author: Andrew Billits
 
 Files:
 ----------------------------------------------------------------------
-admin-ads.php - goes in /wp-content/mu-plugins
+admin-ads directory - goes in /wp-content/plugins
 
 Instructions:
 ----------------------------------------------------------------------
