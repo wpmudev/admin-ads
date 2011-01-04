@@ -50,6 +50,9 @@ add_action('network_admin_notices', 'admin_ads_output');
 //------------------------------------------------------------------------//
 
 function admin_ads_init() {
+	if ( !is_multisite() )
+		exit( 'The Admin Ads plugin is only compatible with WordPress Multisite.' );
+		
 	load_plugin_textdomain('admin_ads', false, dirname(plugin_basename(__FILE__)).'/languages');
 }
 
