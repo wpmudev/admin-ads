@@ -4,10 +4,12 @@ Plugin Name: Admin Ads
 Plugin URI: http://premium.wpmudev.org/project/admin-ads
 Description: Display ads in admin dashboard
 Author: S H Mohanjith (Incsub), Andrew Billits (Incsub)
-Version: 1.0.9
+Version: 1.1.0
+Tested up to: 3.2.0
 Network: true
 Author URI: http://premium.wpmudev.org
 WDP ID: 6
+Text Domain: admin_ads
 */
 
 /* 
