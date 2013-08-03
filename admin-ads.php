@@ -70,11 +70,11 @@ function admin_ads_plug_pages() {
 	
 	if ( version_compare($wp_version, '3.0.9', '>') ) {
 		if ( is_network_admin() ) {
-			add_submenu_page($admin_ads_settings_page, __('Admin Ads', 'admin_ads'), __('Admin Ads', 'admin_ads'), 10, 'admin-ads', 'admin_ads_page_main_output');
+			add_submenu_page($admin_ads_settings_page, __('Admin Ads', 'admin_ads'), __('Admin Ads', 'admin_ads'), 'manage_network_options', 'admin-ads', 'admin_ads_page_main_output');
 		}
 	} else {
 		if ( is_super_admin() ) {
-			add_submenu_page($admin_ads_settings_page, __('Admin Ads', 'admin_ads'), __('Admin Ads', 'admin_ads'), 10, 'admin-ads', 'admin_ads_page_main_output');
+			add_submenu_page($admin_ads_settings_page, __('Admin Ads', 'admin_ads'), __('Admin Ads', 'admin_ads'), 'manage_network_options', 'admin-ads', 'admin_ads_page_main_output');
 		}
 	}
 }
