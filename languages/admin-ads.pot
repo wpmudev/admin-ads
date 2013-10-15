@@ -1,53 +1,48 @@
-# Translation of the WordPress plugin Admin Ads 1.0.9 by S H Mohanjith (Incsub), Andrew Billits (Incsub).
-# Copyright (C) 2011 S H Mohanjith (Incsub), Andrew Billits (Incsub)
+# Copyright (C) 2013 Admin Ads
 # This file is distributed under the same license as the Admin Ads package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Admin Ads 1.0.9\n"
+"Project-Id-Version: Admin Ads 1.1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/admin-ads\n"
-"POT-Creation-Date: 2011-01-03 01:02+0530\n"
-"PO-Revision-Date: 2011-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2013-10-14 20:28:55+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 
-#. #-#-#-#-#  admin-ads.pot (Admin Ads 1.0.9)  #-#-#-#-#
+#. #-#-#-#-#  admin-ads.pot (Admin Ads 1.1.0)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
-#: admin-ads.php:68 admin-ads.php:72 admin-ads.php:100
+#: admin-ads.php:73 admin-ads.php:77 admin-ads.php:105
 msgid "Admin Ads"
 msgstr ""
 
-#: admin-ads.php:104
+#: admin-ads.php:109
 msgid "Ad Code"
 msgstr ""
 
-#: admin-ads.php:107
+#: admin-ads.php:112
 msgid "Tip: Use HTML markup around the code to make it centered on the page."
 msgstr ""
 
-#: admin-ads.php:112
+#: admin-ads.php:117
 msgid "Save Changes"
 msgstr ""
 
-#: admin-ads.php:113
+#: admin-ads.php:118
 msgid "Reset"
 msgstr ""
 
-#: admin-ads.php:124
+#: admin-ads.php:129
 msgid "Settings cleared."
 msgstr ""
 
-#: admin-ads.php:135
+#: admin-ads.php:140
 msgid "Settings saved."
 msgstr ""
 
-#: admin-ads.php:154
+#: admin-ads.php:159
 msgid ""
 "Please install the latest version of <a href=\"http://premium.wpmudev.org/"
 "project/update-notifications/\" title=\"Download Now &raquo;\">our free "
