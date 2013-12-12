@@ -4,7 +4,7 @@ Plugin Name: Admin Ads
 Plugin URI: http://premium.wpmudev.org/project/admin-ads
 Description: Display ads in admin dashboard
 Author: S H Mohanjith (Incsub), Andrew Billits (Incsub)
-Version: 1.1.0
+Version: 1.1.1
 Tested up to: 3.2.0
 Network: true
 Author URI: http://premium.wpmudev.org
@@ -12,7 +12,7 @@ WDP ID: 6
 Text Domain: admin_ads
 */
 
-/* 
+/*
 Copyright 2007-2009 Incsub (http://incsub.com)
 
 This program is free software; you can redistribute it and/or modify
@@ -28,6 +28,10 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
+
+global $wpmudev_notices;
+$wpmudev_notices[] = array( 'id'=> 6, 'name'=> 'Admin Ads', 'screens' => array( 'settings_page_admin-ads-network' ) );
+include_once(plugin_dir_path( __FILE__ ).'external/dash-notice/wpmudev-dash-notification.php');
 
 global $admin_ads_settings_page, $admin_ads_settings_page_long;
 
@@ -54,7 +58,7 @@ add_action('network_admin_notices', 'admin_ads_output');
 function admin_ads_init() {
 	if ( !is_multisite() )
 		exit( 'The Admin Ads plugin is only compatible with WordPress Multisite.' );
-		
+
 	load_plugin_textdomain('admin_ads', false, dirname(plugin_basename(__FILE__)).'/languages');
 }
 
@@ -67,7 +71,7 @@ function admin_ads_output() {
 
 function admin_ads_plug_pages() {
 	global $wpdb, $wp_roles, $current_user, $wp_version, $admin_ads_settings_page, $admin_ads_settings_page_long;
-	
+
 	if ( version_compare($wp_version, '3.0.9', '>') ) {
 		if ( is_network_admin() ) {
 			add_submenu_page($admin_ads_settings_page, __('Admin Ads', 'admin_ads'), __('Admin Ads', 'admin_ads'), 'manage_network_options', 'admin-ads', 'admin_ads_page_main_output');
@@ -85,7 +89,7 @@ function admin_ads_plug_pages() {
 
 function admin_ads_page_main_output() {
 	global $wpdb, $wp_roles, $current_user, $admin_ads_settings_page, $admin_ads_settings_page_long;
-	
+
 	if(!current_user_can('manage_options')) {
 		echo "<p>Nice Try...</p>";  //If accessed properly, this message doesn't appear.
 		return;
@@ -112,10 +116,10 @@ function admin_ads_page_main_output() {
             <br /><?php _e('Tip: Use HTML markup around the code to make it centered on the page.', 'admin_ads') ?></td>
             </tr>
             </table>
-            
+
             <p class="submit">
-            <input type="submit" name="Submit" value="<?php _e('Save Changes', 'admin_ads') ?>" />
-			<input type="submit" name="Reset" value="<?php _e('Reset', 'admin_ads') ?>" />
+            <input class="button button-primary" type="submit" name="Submit" value="<?php _e('Save Changes', 'admin_ads') ?>" />
+			<input class="button button-secondary" type="submit" name="Reset" value="<?php _e('Reset', 'admin_ads') ?>" />
             </p>
             </form>
 			<?php
@@ -148,14 +152,4 @@ function admin_ads_page_main_output() {
 		//---------------------------------------------------//
 	}
 	echo '</div>';
-}
-
-if ( !function_exists( 'wdp_un_check' ) ) {
-	add_action( 'admin_notices', 'wdp_un_check', 5 );
-	add_action( 'network_admin_notices', 'wdp_un_check', 5 );
-
-	function wdp_un_check() {
-		if ( !class_exists( 'WPMUDEV_Update_Notifications' ) && current_user_can( 'edit_users' ) )
-			echo '<div class="error fade"><p>' . __('Please install the latest version of <a href="http://premium.wpmudev.org/project/update-notifications/" title="Download Now &raquo;">our free Update Notifications plugin</a> which helps you stay up-to-date with the most stable, secure versions of WPMU DEV themes and plugins. <a href="http://premium.wpmudev.org/wpmu-dev/update-notifications-plugin-information/">More information &raquo;</a>', 'wpmudev') . '</a></p></div>';
-	}
 }
