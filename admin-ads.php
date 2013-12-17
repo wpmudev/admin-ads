@@ -4,8 +4,8 @@ Plugin Name: Admin Ads
 Plugin URI: http://premium.wpmudev.org/project/admin-ads
 Description: Display ads in admin dashboard
 Author: S H Mohanjith (Incsub), Andrew Billits (Incsub)
-Version: 1.1.1
-Tested up to: 3.2.0
+Version: 1.1.0.1
+Tested up to: 3.8.0
 Network: true
 Author URI: http://premium.wpmudev.org
 WDP ID: 6
@@ -28,10 +28,6 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
-
-global $wpmudev_notices;
-$wpmudev_notices[] = array( 'id'=> 6, 'name'=> 'Admin Ads', 'screens' => array( 'settings_page_admin-ads-network' ) );
-include_once(plugin_dir_path( __FILE__ ).'external/dash-notice/wpmudev-dash-notification.php');
 
 global $admin_ads_settings_page, $admin_ads_settings_page_long;
 
@@ -153,3 +149,8 @@ function admin_ads_page_main_output() {
 	}
 	echo '</div>';
 }
+
+global $wpmudev_notices;
+$wpmudev_notices[] = array( 'id'=> 6, 'name'=> 'Admin Ads', 'screens' => array( 'settings_page_admin-ads-network' ) );
+include_once(plugin_dir_path( __FILE__ ).'external/dash-notice/wpmudev-dash-notification.php');
+
