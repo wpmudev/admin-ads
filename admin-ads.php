@@ -4,7 +4,7 @@ Plugin Name: Admin Ads
 Plugin URI: http://premium.wpmudev.org/project/admin-ads
 Description: Display ads in admin dashboard
 Author: S H Mohanjith (Incsub), Andrew Billits (Incsub)
-Version: 1.1.0.1
+Version: 1.1.0.2
 Tested up to: 3.8.0
 Network: true
 Author URI: http://premium.wpmudev.org
@@ -42,20 +42,32 @@ if ( version_compare($wp_version, '3.0.9', '>') ) {
 //------------------------------------------------------------------------//
 //---Hook-----------------------------------------------------------------//
 //------------------------------------------------------------------------//
-add_action('init', 'admin_ads_init');
-add_action('admin_menu', 'admin_ads_plug_pages');
-add_action('network_admin_menu', 'admin_ads_plug_pages');
-add_action('admin_notices', 'admin_ads_output');
-add_action('network_admin_notices', 'admin_ads_output');
+if ( !is_multisite() ) {
+	add_action('admin_notices', 'admin_ads_admin_notices');
+} else {
+	add_action('init', 'admin_ads_init');
+	add_action('admin_menu', 'admin_ads_plug_pages');
+	add_action('network_admin_menu', 'admin_ads_plug_pages');
+	add_action('admin_notices', 'admin_ads_output');
+	add_action('network_admin_notices', 'admin_ads_output');
+}
 //------------------------------------------------------------------------//
 //---Functions------------------------------------------------------------//
 //------------------------------------------------------------------------//
 
 function admin_ads_init() {
-	if ( !is_multisite() )
-		exit( 'The Admin Ads plugin is only compatible with WordPress Multisite.' );
-
 	load_plugin_textdomain('admin_ads', false, dirname(plugin_basename(__FILE__)).'/languages');
+}
+
+
+function admin_ads_admin_notices() {
+	if ( !is_multisite() ) {
+		?>
+		<div class="updated">
+        	<p>The Admin Ads plugin is only compatible with WordPress Multisite.</p>
+        </div>
+        <?php
+	}
 }
 
 function admin_ads_output() {
@@ -94,7 +106,8 @@ function admin_ads_page_main_output() {
 		?><div id="message" class="updated fade"><p><?php _e(urldecode($_GET['updatedmsg']), 'admin_ads') ?></p></div><?php
 	}
 	echo '<div class="wrap">';
-	switch( $_GET[ 'action' ] ) {
+	$action = isset($_GET[ 'action' ])?$_GET[ 'action' ]:'default';
+	switch( $action ) {
 		//---------------------------------------------------//
 		default:
 			$admin_ads_data = get_site_option('admin_ads_data');
