@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: Admin Ads
-Plugin URI: http://premium.wpmudev.org/project/admin-ads
+Plugin URI: https://premium.wpmudev.org/project/admin-ads/
 Description: Display ads in admin dashboard
-Author: S H Mohanjith (Incsub), Andrew Billits (Incsub)
+Author: WPMU DEV
 Version: 1.1.0.2
 Tested up to: 3.8.0
 Network: true
@@ -13,7 +13,9 @@ Text Domain: admin_ads
 */
 
 /*
-Copyright 2007-2009 Incsub (http://incsub.com)
+Copyright 2009-2014 Incsub (http://incsub.com)
+Author - S H Mohanjith
+Contributors - Andrew Billits
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License (Version 2 - GPLv2) as published by
